@@ -1,6 +1,10 @@
 <template>
   <div class="note-selectors">
-    <note-selector v-for="note in notes"/>
+    <note-selector
+      v-for="note in notes"
+      v-bind:key="note.id"
+      v-bind:note="note"
+    />
   </div>
 </template>
 
