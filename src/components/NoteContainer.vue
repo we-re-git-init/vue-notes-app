@@ -1,6 +1,6 @@
 <template>
   <div class="note-container">
-    <note-selectors />
+    <note-selectors v-bind:notes="notes"/>
     <note-editor />
   </div>
 </template>
@@ -14,6 +14,7 @@
     components: {
       NoteSelectors,
       NoteEditor
-    }
+    },
+    props: ['notes']
   }
 </script>
