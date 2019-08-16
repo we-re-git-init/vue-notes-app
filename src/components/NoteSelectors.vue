@@ -4,6 +4,8 @@
       v-for="note in notes"
       v-bind:key="note.id"
       v-bind:note="note"
+      v-bind:selectedNoteId="selectedNoteId"
+      v-on:selectNote="setSelectNote"
     />
   </div>
 </template>
@@ -23,7 +25,14 @@ export default {
         { id: 2, body: "This is a second test", timestamp: Date.now() },
         { id: 3, body: "This is a third test", timestamp: Date.now() },
         { id: 4, body: "This is a fourth test", timestamp: Date.now() }
-      ]
+      ],
+      selectedNoteId: 3
+    }
+  },
+  methods: {
+    setSelectNote: function(noteId) {
+      console.log(noteId);
+      this.selectedNoteId = noteId;
     }
   }
 }
